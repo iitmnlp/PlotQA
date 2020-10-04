@@ -1,16 +1,89 @@
 extends layout
 
 block title
-  title DailyDialog++ - Multi-reference Adversarial Dataset for Dialog Evaluation
+  title PlotQA: Reasoning over Scientific Plots
 
 block description
-  meta(name='description', content='DailyDialog++ is a Multi-reference Adversarial Dataset for Dialog Evaluation')
+  meta(name='description', content='PlotQA: Reasoning over Scientific Plots')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/explore.css')
 
 block extrascripts
 
+
+mixin plot_qa_pairs()
+  table.table.performanceTable
+    tr
+      th <center>Plot</center>
+      th <center>Question-Answer</center>
+          
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/181_line.png", width="70%", height="60%")
+        td
+          p <b>Q:</b> What is the difference between price of gasoline in Switzerland and price of gasoline in Macedonia in 2008? </br>
+          <b>A:</b> #{0.15} </br> </br>
+          <b>Q:</b> What is the difference between two consecutive major ticks on the Y-axis? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> Is the number of lines equal to the number of legend-labels? </br>
+          <b>A:</b> Yes
+
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/3_vbar_categorical.png", width="70%", height="70%")
+        td
+          p <b>Q:</b> In how many years is the number of neonatal deaths in Cuba greater than 500? </br>
+          <b>A:</b> #{2} </br> </br>
+          <b>Q:</b> What is the total number of neonatal deaths in Cuba in the graph? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> What is the title of the graph? </br>
+          <b>A:</b> Number of neonatal deaths
+
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/10_dot_line.png", width="70%", height="70%")
+        td
+          p <b>Q:</b> What is the difference between the highest and the second highest amount of earnings from goods? </br>
+          <b>A:</b> 0.9e+5 </br> </br>
+          <b>Q:</b> What is the total number of neonatal deaths in Cuba in the graph? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> What is the title of the graph? </br>
+          <b>A:</b> Number of neonatal deaths
+
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/149_hbar_categorical.png", width="70%", height="70%")
+        td
+          p <b>Q:</b> What is the ratio of the sodium content in Sample 37 to that in Sample 33? </br>
+          <b>A:</b> #{1.086} </br> </br>
+          <b>Q:</b> What is the difference between the highest and the second highest sodium content across the different samples? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> What is the title of the graph? </br>
+          <b>A:</b> Number of neonatal deaths
+      
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/1_hbar_categorical.png", width="70%", height="70%")
+        td
+          p <b>Q:</b> What is the average air quality index value for NHMC per hour? </br>
+          <b>A</b>: #{0.167} </br> </br>
+          <b>Q:</b> What is the difference between the air quality index of CH4 at 07:00:00 hours and the air quality index of CH4 at 09:00:00 hours? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> What is the title of the graph? </br>
+          <b>A:</b> Number of neonatal deaths
+        
+      tr
+        td
+          img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/1304_line.png", width="70%", height="70%")
+        td
+          p <b>Q:</b> Does the amount of banana production monotonically increase over the years? </br>
+          <b>A:</b> Yes </br> </br>
+          <b>Q:</b> In how many years, is the banana production greater than the average banana production taken over all years? </br>
+          <b>A:</b> #{0.5} </br> </br>
+          <b>Q:</b> In which year was the banana production minimum? </br>
+          <b>A:</b> Number of neonatal deaths
+        
 mixin model_showcase(model, version)
   if model
     h2(id=model) #{model}
@@ -28,16 +101,18 @@ block content
   .cover
     .container
       .row
-        .col-md-4
-          h1 Explore DailyDialog++
+        .col-md-12
+          h1 <center>Sample {plot, question, answer} triplet from PlotQA</center>
           .infoCard
             .infoBody
-              h2 Version #{version}, #{split} set
-              +model_showcase()
-        .col-md-8
+                <!-- img(src="https://github.com/NiteshMethani/PlotQA/blob/master/images/sample_images.png?raw=true", width="100%", height="100%") -->
+                +plot_qa_pairs()
+                
+            
+        <!-- .col-md-8
           h1 Visualize Model Predictions
           each model in models.sort().reverse()
               .infoCard
                 .infoBody
-                    +model_showcase(model, version)
+                    +model_showcase(model, version) -->
                         

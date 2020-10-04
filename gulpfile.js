@@ -15,7 +15,7 @@ var path = require('path')
 var fs = require('fs')
 var cheerio = require('cheerio')
 
-var build_dir = 'DailyDialog-plusplus/' // good to have this be the same as the repo name for gh-pages purposes
+var build_dir = 'PlotQA/' // good to have this be the same as the repo name for gh-pages purposes
 
 var rankEntries = function (entries) {
   entries.sort(function(a, b) {

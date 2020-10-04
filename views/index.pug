@@ -1,10 +1,10 @@
 extends layout
 
 block title     
-  title Multi-reference Adversarial Dataset for Dialog Evaluation
+  title Reasoning over Scientific Plots
 
 block description
-  meta(name='description', content='DailyDialog++ is a Multi-reference Adversarial Dataset for Dialog Evaluation')
+  meta(name='description', content='PlotQA: Reasoning over Scientific Plots')
 
 block extralinks
   link(rel='stylesheet', href='/stylesheets/index.css')
@@ -19,63 +19,46 @@ mixin trained_on_random_negatives(group, is_test)
         th Rank
       th Model
       th Accuracy
-      th PBC 
     - var human_em = 86.831
     - var human_f1 = 89.452
       tr
         td
-          p #{"1"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          p #{""}
+          span.date.label.label-default #{""}
         td
-          | RUBER-Large 
-          p.institution #{"Peking University"}
-          a(href="https://arxiv.org/abs/1701.03079") (Tao & al., '17)
-        td #{68.92}
-        td #{0.42}
+          | Human Baseline 
+          p.institution #{"IIT Madras"}
+        td #{80.47}
+
+      tr
+        td
+          p #{"1"}
+          span.date.label.label-default #{"March, 2020"}
+        td
+          | Hybrid Model <b>
+          p.institution #{"IIT Madras"}
+          a(href="https://arxiv.org/pdf/1909.00997.pdf") (Methani & al. '20)
+        td #{22.52}
 
       tr
         td
           p #{"2"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          span.date.label.label-default #{"March, 2020"}
         td
-          | DEB <b>
+          | VOES <b>
           p.institution #{"IIT Madras"}
-          a(href="") (Sai & al. '20)
-        td #{66.78}
-        td #{0.39}
+          a(href="https://arxiv.org/pdf/1909.00997.pdf") (Methani & al. '20)
+        td #{18.46}
 
       tr
         td
           p #{"3"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          span.date.label.label-default #{"March, 2020"}
         td
-          | RUBER <b>
-          p.institution #{"Peking University"}
-          a(href="https://arxiv.org/abs/1701.03079") (Tao & al., '17)
-        td #{65.00}
-        td #{0.35}
-
-      tr
-        td
-          p #{"4"}
-          span.date.label.label-default #{"Sep 13, 2020"}
-        td
-          | ADEM <b>
-          p.institution #{"McGill University"}
-          a(href="https://arxiv.org/abs/1708.07149") (Lowe & al., '17)
-        td #{64.43}
-        td #{0.37}
-
-      tr
-        td
-          p #{"5"}
-          span.date.label.label-default #{"Sep 13, 2020"}
-        td
-          | BERT+DNN <b>
-          p.institution #{"University of Southern California"}
-          a(href="https://arxiv.org/abs/1904.10635") (Ghazarian et al., 2019)
-        td #{60.14}
-        td #{0.29}
+          | SAN <b>
+          p.institution #{"Carnegie Mellon University"}
+          a(href="https://arxiv.org/pdf/1511.02274.pdf") (Yang & al., '16)
+        td #{7.76}
 
 
 mixin trained_on_both(group, is_test)
@@ -84,62 +67,36 @@ mixin trained_on_both(group, is_test)
       if is_test
         th Rank
       th Model
-      th Accuracy
-      th PBC       
+      th Accuracy      
       tr
         td
           p #{"1"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          span.date.label.label-default #{"March, 2020"}
         td
-          | DEB <b>
+          | Hybrid Model <b>
           p.institution #{"IIT Madras"}
-          a(href="") (Sai & al. '20)
-        td #{92.66}
-        td #{0.86}
+          a(href="https://arxiv.org/pdf/1909.00997.pdf") (Methani & al. '20)
+        td #{57.99}
 
       tr
         td
           p #{"2"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          span.date.label.label-default #{"March, 2020"}
         td
-          | BERT+DNN <b>
-          p.institution #{"University of Southern California"}
-          a(href="https://arxiv.org/abs/1904.10635") (Ghazarian et al., 2019)
-        td #{86.61}
-        td #{0.79}
+          | SANDY-OCR <b>
+          p.institution #{"Rochester Institute of Technology"}
+          a(href="https://openaccess.thecvf.com/content_cvpr_2018/papers/Kafle_DVQA_Understanding_Data_CVPR_2018_paper.pdf") (Kafle et al., 2018)
+        td #{45.77}
 
       tr
         td
           p #{"3"}
-          span.date.label.label-default #{"Sep 13, 2020"}
+          span.date.label.label-default #{"March, 2020"}
         td
-          | RUBER-Large <b>
-          p.institution #{"Peking University"}
-          a(href="https://arxiv.org/abs/1701.03079") (Tao & al. '17)
-        td #{86.52}
-        td #{0.78}
-
-      tr
-        td
-          p #{"4"}
-          span.date.label.label-default #{"Sep 13, 2020"}
-        td
-          | RUBER <b>
-          p.institution #{"Peking University"}
-          a(href="https://arxiv.org/abs/1701.03079") (Tao & al. '17)
-        td #{83.81}
-        td #{0.74}
-
-      tr
-        td
-          p #{"5"}
-          span.date.label.label-default #{"Sep 13, 2020"}
-        td
-          | ADEM <b>
-          p.institution #{"McGill University"}
-          a(href="https://arxiv.org/abs/1708.07149") (Lowe & al., '17)
-        td #{66.62}
-        td #{0.41}
+          | SAN <b>
+          p.institution #{"Carnegie Mellon University"}
+          a(href="https://arxiv.org/pdf/1511.02274.pdf") (Yang & al., '16)
+        td #{32.10}
 
 
 block content
@@ -150,54 +107,57 @@ block content
           .infoCard
             .infoBody
               .infoHeadline
-                h2 What is DailyDialog++?
+                h2 What is PlotQA?
               p 
                 span 
-                | DailyDialog++ is an open-domain dialogue evaluation dataset consisting of 19k contexts with five relevant responses for each context. Additionally for 11k contexts, it includes five adversarial irrelevant responses which are specifically crafted to have lexical or semantic overlap with the context but are still unacceptable as valid responses. We hope that DailyDialog++ will be a useful resource in achieving better training and robust evaluation of dialogue evaluation metrics.              
-                a.btn.actionBtn(href="/explore/1.0/test/") Explore DailyDialog++
-                a.btn.actionBtn(href="") DailyDialog++ paper (TACL 2020)
+                | PlotQA is a VQA dataset with 28.9 million question-answer pairs grounded over 224,377 plots on data from real-world sources and questions based on crowd-sourced question templates. 
+              .infoHeadline
+                h2 Why PlotQA?
+              p 
+                span 
+                | Existing synthetic datasets (<a href="https://arxiv.org/pdf/1710.07300.pdf">FigureQA</a>, <a href="https://arxiv.org/pdf/1801.08163.pdf">DVQA</a>) for reasoning over plots do not contain variability in data labels, real-valued data, or complex reasoning questions. Consequently, proposed models for these datasets do not fully address the challenge of reasoning over plots. In particular, they assume that the answer comes either from a small fixed size vocabulary or from a bounding box within the image. However, in practice this is an unrealistic assumption because many questions require reasoning and thus have real valued answers which appear neither in a small fixed size vocabulary nor in the image. In this work, we aim to bridge this gap between existing datasets and real world plots by introducing PlotQA. Further, 80.76% of the out-of-vocabulary (OOV) questions in PlotQA have answers that are not in a fixed vocabulary.             
+                <!-- a.btn.actionBtn(href="/explore/1.0/test/") Explore PlotQA -->
+                a.btn.actionBtn(href="https://arxiv.org/pdf/1909.00997.pdf") PlotQA paper (WACV 2020)
               hr
               .infoHeadline
                 h2 Getting Started
               p 
-                | Download the dataset of 11k contexts with 5 relevant and 5 adversarial irrelevant responses per context. 
+                | Download the dataset of 28.9 million question-answer pairs grounded over 224,377 plots. 
                 ul.list-unstyled
                   li
-                    a.btn.actionBtn.inverseBtn(href="/dataset/train.json", download)
-                      | Training Set (11 MB)
+                    a.btn.actionBtn(href="https://drive.google.com/drive/folders/1hCMwlZtxqu4-rxD5ja-lUUizOJfuNUfD?usp=sharing", download)
+                      | Plot Images
                   li
-                    a.btn.actionBtn.inverseBtn(href="/dataset/dev.json", download)
-                      | Dev Set (1 MB)
+                    a.btn.actionBtn(href="https://drive.google.com/drive/folders/1dwhZUp5vZQSRq0zanCacPB81kFhV6SfG?usp=sharing", download)
+                      | Annotations
                   li
-                    a.btn.actionBtn.inverseBtn(href="/dataset/test.json", download)
-                      | Test Set (1 MB)
+                    a.btn.actionBtn(href="https://drive.google.com/drive/folders/1Sh79vd9AgwnUk0QAzHMBxd1jXJW3KayQ?usp=sharing", download)
+                      | QA Pairs
               hr
               .infoHeadline
-                h2 Models
+                h2 PlotQA Pipeline
                 p 
                 span
-                  | We propose 
-                  b D
-                  |ialogue 
-                  b E
-                  |valuation with 
-                  b B
-                  |ert (DEB), 
-                |  a new BERT-based evaluation metric which is pretrained on a massive corpus of 727 Million Reddit conversations. DEB significantly outperforms existing models, showing better correlation with human judgements and better performance on random negatives. Check out the code for DEB and other Dialogue evaluation baselines like RUBER, ADEM, etc                
+                  | Our proposed pipeline (VOES) consists of various subtasks: (i) detect all the elements in the plot (bars, legend names, tick labels, etc), (ii) reads the values of these elements, (iii) establish relationship between the plot elements, and (iv) reason over this structured data.
                 
                 ul.list-unstyled
                   li
-                    a.btn.actionBtn.inverseBtn(href="https://github.com/iitmnlp/Dialogue-Evaluation-with-BERT", download)
-                      | Code
+                    a.btn.actionBtn(href="https://github.com/NiteshMethani/PlotQA/blob/master/PlotQA_Pipeline.md", download)
+                      | Download Code
                   li
               .infoHeadline
                 h2 Have Questions?
               p 
                 | Ask us questions at   
-                a(href="mailto:makashkumar99@gmail.com") makashkumar99@gmail.com
+                a(href="mailto:nmethani@cse.iitm.ac.in") nmethani@cse.iitm.ac.in
                 |  and 
-                a(href="mailto:ananya@cse.iitm.ac.in") ananya@cse.iitm.ac.in
+                a(href="mailto:prithag@cse.iitm.ac.in") prithag@cse.iitm.ac.in
                 | .
+              .infoHeadline
+                h2 Acknowledgements
+              p 
+                | Thank you <a href="https://rajpurkar.github.io/SQuAD-explorer/">SQuAD</a>
+                | for allowing us to use the code to create this website.
             .infoSubheadline
               include includes/tweet
               include includes/github
@@ -205,13 +165,13 @@ block content
           .infoCard
             .infoBody
               .infoHeadline
-                h2 Results (trained on random negatives)
-              p DailyDialog++ evaluates the ability of dailog evaluation metrics to distinguish between the relevant and irrelevant responses to a given context. Here, we report the test perfromance of various metrics in differentiating between relevant and adversarial irrelevant responses when trained with random negative responses (sampling random utterances from other contexts). We use accuracy and the Point-biserial correlation (PBC) coefficient as the performance measure. We observe that the performance of all metrics including DEB is poor when evaluated on adversarial examples from our dataset.
+                h2 Results (trained and tested on PlotQA)
+              p To assess the difficulty of the PlotQA dataset, we report human accuracy on a small subset of the Test split of the dataset. We also evaluate three state-of-the-art models on PlotQA and observe that uur proposed hybrid model significantly outperforms the existing models. It has an aggregate accuracy of 22.52% on the PlotQA dataset. We acknowledge that the accuracy is significantly lower than human performance. This establishes that the dataset is challenging and raises open questions on models for visual reasoning.
               +trained_on_random_negatives(test2, true)
           .infoCard
             .infoBody
               .infoHeadline
-                h2 Results (trained on random + adversarial negatives)
+                h2 Results (trained and tested on DVQA)
               p 
-                |  Here, we report the test perfromance of various metrics in differentiating between the relevant and adversarial irrelevant responses when trained with both random and adversarial irrelevant responses. We observe that DEB significantly outperforms all the other metrics.
+                |  We evaluate our model on the test-set of DVQA. Our proposed hybrid model performs better than the existing models (SAN and SANY-OCR) establishing a new state-of-the-art result on DVQA.
               +trained_on_both(test1, true)
