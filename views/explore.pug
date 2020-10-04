@@ -23,66 +23,80 @@ mixin plot_qa_pairs()
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/181_line.png", width="70%", height="60%")
         td
           p <b>Q:</b> What is the difference between price of gasoline in Switzerland and price of gasoline in Macedonia in 2008? </br>
-          <b>A:</b> #{0.15} </br> </br>
-          <b>Q:</b> What is the difference between two consecutive major ticks on the Y-axis? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> Is the number of lines equal to the number of legend-labels? </br>
-          <b>A:</b> Yes
+          p <b>A:</b> #{0.15} </br> </br>
+          p <b>Q:</b> What is the difference between two consecutive major ticks on the Y-axis? </br>
+          p <b>A:</b> #{0.5} </br> </br>
+          p <b>Q:</b> Is the number of lines equal to the number of legend-labels? </br>
+          p <b>A:</b> Yes </br> </br>
+          p <b>Q:</b> What is the label or title of the Y-axis? </br>
+          p <b>A:</b> Price (US$ per litre)
 
       tr
         td
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/3_vbar_categorical.png", width="70%", height="70%")
         td
           p <b>Q:</b> In how many years is the number of neonatal deaths in Cuba greater than 500? </br>
-          <b>A:</b> #{2} </br> </br>
-          <b>Q:</b> What is the total number of neonatal deaths in Cuba in the graph? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> What is the title of the graph? </br>
-          <b>A:</b> Number of neonatal deaths
+          p <b>A:</b> #{2} </br> </br>
+          p <b>Q:</b> What is the total number of neonatal deaths in Cuba in the graph? </br>
+          p <b>A:</b> #{2049.23} </br> </br>
+          p <b>Q:</b> How are the legend labels stacked? </br>
+          p <b>A:</b> horizontal </br> </br>
+          p <b>Q:</b> Does Havana appear as one of the legend labels in the graph? </br>
+          p <b>A:</b> No
 
       tr
         td
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/10_dot_line.png", width="70%", height="70%")
         td
           p <b>Q:</b> What is the difference between the highest and the second highest amount of earnings from goods? </br>
-          <b>A:</b> 0.9e+5 </br> </br>
-          <b>Q:</b> What is the total number of neonatal deaths in Cuba in the graph? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> What is the title of the graph? </br>
-          <b>A:</b> Number of neonatal deaths
+          p <b>A:</b> 0.9e+5 </br> </br>
+          p <b>Q:</b> How many years are there in the graph? </br>
+          p <b>A:</b> #{4} </br> </br>
+          p <b>Q:</b> Across all years, what is the minimum earning from goods? </br>
+          p <b>A:</b> 6.000e+5 </br> </br>
+          p <b>Q:</b> In which year was the earning from goods maximum? </br>
+          p <b>A:</b> 2013-14
 
       tr
         td
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/149_hbar_categorical.png", width="70%", height="70%")
         td
           p <b>Q:</b> What is the ratio of the sodium content in Sample 37 to that in Sample 33? </br>
-          <b>A:</b> #{1.086} </br> </br>
-          <b>Q:</b> What is the difference between the highest and the second highest sodium content across the different samples? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> What is the title of the graph? </br>
-          <b>A:</b> Number of neonatal deaths
+          p <b>A:</b> #{1.086} </br> </br>
+          p <b>Q:</b> What is the difference between the highest and the second highest sodium content across the different samples? </br>
+          p <b>A:</b> #{1.14} </br> </br>
+          p <b>Q:</b> What is the title of the graph? </br>
+          p <b>A:</b> Sodium content in different samples </br> </br>
+          <!--p <b>Q:</b> How many samples are there in the graph? </br>
+          p <b>A:</b> 5 </br> </br> -->
+          p <b>Q:</b> Is the sum of the sodium content in Sample 35 and Sample 36 greater than the maximum sodium content across all samples? </br>
+          p <b>A:</b> Yes
       
       tr
         td
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/1_hbar_categorical.png", width="70%", height="70%")
         td
           p <b>Q:</b> What is the average air quality index value for NHMC per hour? </br>
-          <b>A</b>: #{0.167} </br> </br>
-          <b>Q:</b> What is the difference between the air quality index of CH4 at 07:00:00 hours and the air quality index of CH4 at 09:00:00 hours? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> What is the title of the graph? </br>
-          <b>A:</b> Number of neonatal deaths
+          p <b>A</b>: #{0.167} </br> </br>
+          p <b>Q:</b> What is the difference between the air quality index of CH4 at 07:00:00 hours and the air quality index of CH4 at 09:00:00 hours? </br>
+          p <b>A:</b> #{0.5} </br> </br>
+          p <b>Q:</b> Is it the case that in every hour, the sum of the air quality index of NMHC and CO is greater than the air quality index of CH4? </br>
+          p <b>A:</b> No </br> </br>
+          p <b>Q:</b> What is the air quality index of NHMC at 08:00:00 hours? </br>
+          p <b>A:</b> #{0.184}
         
       tr
         td
           img(src="https://raw.githubusercontent.com/NiteshMethani/PlotQA/master/images/1304_line.png", width="70%", height="70%")
         td
           p <b>Q:</b> Does the amount of banana production monotonically increase over the years? </br>
-          <b>A:</b> Yes </br> </br>
-          <b>Q:</b> In how many years, is the banana production greater than the average banana production taken over all years? </br>
-          <b>A:</b> #{0.5} </br> </br>
-          <b>Q:</b> In which year was the banana production minimum? </br>
-          <b>A:</b> Number of neonatal deaths
+          p <b>A:</b> Yes </br> </br>
+          p <b>Q:</b> In how many years, is the banana production greater than the average banana production taken over all years? </br>
+          p <b>A:</b> #{3} </br> </br>
+          p <b>Q:</b> In which year was the banana production minimum? </br>
+          p <b>A:</b> 2004-05 </br> </br>
+          p <b>Q:</b> What is the median banana production? </br>
+          p <b>A:</b> #{20500.12}
         
 mixin model_showcase(model, version)
   if model
